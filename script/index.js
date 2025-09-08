@@ -40,7 +40,7 @@ const displayCard = (id) =>{
     cardContainer.innerHTML = ""
     id.forEach((id)=>{
     const btnDiv = document.createElement("div");
-    btnDiv.innerHTML =  `<div class="card bg-white rounded-2xl p-5 space-y-4 h-[381.8]">
+    btnDiv.innerHTML =  `<div class="card bg-white rounded-2xl p-5 space-y-4 h-[381.8] shadow-2xl">
                         <img class="h-[230px] object-cover rounded-2xl bg-gray-400" src="" alt="">
                         <button onclick="displayDetails(${id.id})" class="btn btn-ghost justify-start text-xl font-bold" >${id.name}</button>
                         <p class="text-[#1F293780]">${id.description}</p>
@@ -70,7 +70,7 @@ const displayDetails = (id) =>{
     console.log(img, detailsDisplay)
 
     detailsDisplay.innerHTML =   `<img src="${img.image}" alt="">
-                        <h2>${img.name}</h2>
+                        <h2 class="text-xl">${img.name}</h2>
                         <h2>${img.category}</h2>
                         <p>${img.description}</p>
                         <div class="flex justify-between items-center">
