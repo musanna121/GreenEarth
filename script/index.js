@@ -42,7 +42,8 @@ const displayCard = (id) =>{
     const btnDiv = document.createElement("div");
     btnDiv.innerHTML =  `<div class="card bg-white rounded-2xl p-5 space-y-4 h-[381.8]">
                         <img class="h-[230px] object-cover rounded-2xl bg-gray-400" src="" alt="">
-                        <h2 class="font-xl font-bold">${id.name}</h2>
+                        <button class="btn btn-ghost justify-start font-2xl font-bold" onclick="my_modal_1.showModal()">${id.name}</button>
+                        <h2 class=""></h2>
                         <p class="text-[#1F293780]">${id.description}</p>
                         <div class="flex justify-between items-center">
                             <button class="btn bg-[#dcfce7] text-[#15803D]">${id.category}</button>
@@ -65,6 +66,7 @@ const printTotal = (total) =>{
 
 const showCart = (name,price,id) =>{
     // console.log(name,price,id)
+    alert(`Add ${name} to cart price: ${price}`)
     const cartList = document.getElementById("cart")
     const newCart = document.createElement("div");
     const number = document.getElementById(`number${id}`)
@@ -74,13 +76,13 @@ const showCart = (name,price,id) =>{
         document.getElementById(`number${id}`).innerHTML = ""
         const newCount = count+1
         document.getElementById(`number${id}`).innerHTML = `${newCount}`
-        
+        calculateTotal();
     }
     else{
         newCart.innerHTML =`<div  class="flex justify-between items-center m-5 p-3 rounded-2xl bg-[#F0FDF4]">
                         <div class="">
                             <h3>${name}</h3>
-                            <h3 id="price-${id}">${price} <i class="fa-solid fa-xmark text-sm "></i><span id="number${id}">1</span></h3>
+                            <h3 id="price-${id}">${price}<i class="fa-solid fa-xmark text-sm "></i><span id="number${id}">1</span></h3>
                         </div>
                         <div class=""><button class="btn btn-ghost remove-btn"><i class="fa-solid fa-xmark"></i></button></div>
                     </div>`
