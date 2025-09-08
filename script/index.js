@@ -42,8 +42,7 @@ const displayCard = (id) =>{
     const btnDiv = document.createElement("div");
     btnDiv.innerHTML =  `<div class="card bg-white rounded-2xl p-5 space-y-4 h-[381.8]">
                         <img class="h-[230px] object-cover rounded-2xl bg-gray-400" src="" alt="">
-                        <button class="btn btn-ghost justify-start font-2xl font-bold" onclick="my_modal_1.showModal()">${id.name}</button>
-                        <h2 class=""></h2>
+                        <button onclick="displayDetails(${id.id})" class="btn btn-ghost justify-start text-xl font-bold" >${id.name}</button>
                         <p class="text-[#1F293780]">${id.description}</p>
                         <div class="flex justify-between items-center">
                             <button class="btn bg-[#dcfce7] text-[#15803D]">${id.category}</button>
@@ -54,6 +53,34 @@ const displayCard = (id) =>{
     cardContainer.append(btnDiv)
     })
 } 
+
+// const removeActive = () => {
+//     const lessonButtons = document.querySelectorAll(".lesson-btn")
+//     // console.log(lessonButtons)
+//     lessonButtons.forEach((btn)=> btn.classList.remove("active"))
+// }
+
+const displayDetails = (id) =>{
+    const url = `https://openapi.programming-hero.com/api/plant/${id}`
+    fetch(url)
+    .then((res)=>res.json())
+    .then((details) => {
+    const img = details.plants
+    const detailsDisplay = document.getElementById("diplay-modal")
+    console.log(img, detailsDisplay)
+
+    detailsDisplay.innerHTML =   `<img src="${img.image}" alt="">
+                        <h2>${img.name}</h2>
+                        <h2>${img.category}</h2>
+                        <p>${img.description}</p>
+                        <div class="flex justify-between items-center">
+                            <button class="btn bg-[#dcfce7] text-[#15803D]">${img.category}</button>
+                            <p>$${img.price}</p>
+                        </div>`
+
+    my_modal_1.showModal()
+    })
+}
 
 const printTotal = (total) =>{
     const showTotal = document.getElementById("showTotal")
