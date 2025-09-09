@@ -22,7 +22,7 @@
             <div class="navbar-start">
                 <a class="btn btn-ghost text-xl">Green Earth</a>
             </div>
-            <div class="navbar-center hidden lg:flex text-white">
+            <div class="navbar-center lg:flex text-white">
                 <ul class="menu menu-horizontal px-1">
                 <li><a>About</a></li>
                 <li><a href="">Gallery</a>
@@ -37,11 +37,11 @@
         </header>
 
         <!-- banner section -->
-        <section class="flex justify-between items-center bg-[#CFF0DC]">
+        <section class="flex flex-col md:flex-row justify-between items-center bg-[#CFF0DC]">
             <div class=""><img src="./assets/hero-leaf1.png" alt=""></div>
-            <div class="text-center space-y-4">
+            <div class="text-center space-y-4 pt-20">
                 <h2 class="text-4xl font-bold">Plant a Tree, Grow a Future</h2>
-                <p class="text-[#1F2937]">Join our mission to plant 1 million trees and make the Earth greener for future
+                <p class="text-[#1F2937] px-20">Join our mission to plant 1 million trees and make the Earth greener for future
                 generations.</p>
              <button><a class="btn bg-yellow-400 text-[#15803D] rounded-3xl">Get Involved</a></button>
             </div>
@@ -49,28 +49,34 @@
         </section>
 
         <section class=" bg-[#F0FDF4] mx-auto">
-            <h2 class="col-span-12 text-3xl font-semibold text-center my-10">Choose Your Trees</h2>
-            <div class="col-span-14 grid grid-cols-14 gap-1 mx-15">
+            <h2 class="text-3xl font-semibold text-center my-10">Choose Your Trees</h2>
+            <div class="md:col-span-14 md:grid md:grid-cols-14 gap-1 mx-15">
                 <!-- left -->
-                <aside class="left col-span-2">
-                    <h2 class="text-xl font-semibold">Categories</h2>
-                    <ul id="category-list" class="mt-10 text-left">
-                        <button id="all-category" onclick='removeActive();this.classList.add("highlight");loadAll()' class="btn btn-wide btn-ghost justify-start highlight"><li class="p-2 text-[16px]">All Trees</li></button> 
-                    </ul>
+                <aside class="left md:col-span-2">
+                    <h2 class="text-xl font-semibold text-center">Categories</h2>
+                    <div class="flex justify-center mt-10">
+                        <button id="all-category" onclick='removeActive();this.classList.add("highlight");loadAll()'
+                    class="btn btn-wide btn-ghost md:justify-start highlight text-center text-[16px]">All Trees</button>
+                    </div>
                     
+                    
+                    <ul id="category-list" class="text-left flex flex-wrap justify-center md:block">
+                         
+                    </ul>
                 </aside>
+
                 <!-- middle -->
-                <main  class="col-span-10 ">
-                    <div id="spinner" class="col-span-10 grid-cols-10 flex justify-center my-20 hidden">
+                <main  class="md:col-span-10 mb-20">
+                    <div id="spinner" class="md:col-span-10 md:grid-cols-10 flex justify-center my-20 hidden">
                         <span class="loading loading-dots loading-xl"></span>
                     </div>
-                    <div id="card-container" class="grid grid-cols-3 gap-5 mx-10">
+                    <div id="card-container" class="md:grid md:grid-cols-3 gap-5 flex flex-col justify-center mx-10">
 
                     </div>
-                    
                 </main>
+
                 <!-- right  -->
-                <aside class="col-span-2 right bg-white rounded-2xl">
+                <aside class="md:col-span-2 right bg-white rounded-2xl">
                     <h3 class="text-xl font-semibold p-5 ">Your Cart</h3>
                     <div id="cart" class="">
                         
@@ -84,11 +90,11 @@
 
         <section class="mx-auto w-7/12 ">
             <h2 class="text-3xl text-center my-10">About the Campaign</h2>
-            <div class=" col-span-4 grid grid-cols-4 items-center gap-4 mb-20">
-                <div class="col-span-2 grid-cols-2">
+            <div class=" md:col-span-4 md:grid md:grid-cols-4 flex flex-col items-center gap-4 mb-20">
+                <div class="md:col-span-2 md:grid-cols-2 ">
                     <img src="./assets/about.png" alt="">
                 </div>
-                <div class="col-span-2 grid-cols-2 text-[#1F293790]">
+                <div class="md:col-span-2 md:grid-cols-2  text-[#1F293790]">
                     <p>Green Earth is a global tree plantation initiative dedicated to fighting climate change. Since our start, we’ve planted over 500,000 trees worldwide. By joining our campaign, you help restore forests, create habitats for wildlife, and combat global warming.</p>
                     <ul class="mt-7 list-disc ml-5">
                         <li>Restoration of natural habitats</li>
@@ -121,7 +127,7 @@
 
         <section class="bg-[#166534] p-20">
             <h2 class="text-white text-center text-2xl font-semibold mb-6">Plant a Tree Today</h2>
-            <div class="bg-green-700 p-8 rounded-lg w-4/12 shadow-lg mx-auto ">
+            <div class="bg-green-700 p-8 rounded-lg md:w-4/12 shadow-lg mx-auto ">
                 <form class="flex flex-col gap-4">
                 <input type="text" placeholder="Your Name" class="bg-white p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400" />
                 
