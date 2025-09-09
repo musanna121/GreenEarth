@@ -57,7 +57,7 @@ const displayCard = (id) =>{
     id.forEach((id)=>{
     const btnDiv = document.createElement("div");
     btnDiv.innerHTML =  `<div class="card bg-white rounded-2xl p-5 space-y-4 h-[381.8] shadow-2xl">
-                        <img class="h-[230px] object-cover rounded-2xl bg-gray-400" src="" alt="">
+                        <img class="h-[230px] object-cover rounded-2xl bg-gray-400" src="${id.image}" alt="">
                         <button onclick="displayDetails(${id.id})" class="btn btn-ghost justify-start text-xl font-bold" >${id.name}</button>
                         <p class="text-[#1F293780]">${id.description}</p>
                         <div class="flex justify-between items-center">
