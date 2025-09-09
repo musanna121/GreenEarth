@@ -30,11 +30,23 @@
         Places the values accordingly.
 
 #### 5) Explain template literals in ES6. How are they different from string concatenation?
+        
+        //With template literals
+
+        const message = `This is line one
+        This is line two
+        This is line three`;
 
         
 
+        //With concatenation
 
+        const message = "This is line one\n" +
+                        "This is line two\n" +
+                         "This is line three";
 
+        `` allows us to print the text as it is and avoid error due to multiple usage of "" and ''
+        variable printing is also easy this way using ${variable}
 
 
 
