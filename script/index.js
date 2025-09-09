@@ -88,13 +88,13 @@ const displayDetails = (id) =>{
     const detailsDisplay = document.getElementById("diplay-modal")
     console.log(img, detailsDisplay)
 
-    detailsDisplay.innerHTML =   `<img src="${img.image}" alt="">
-                        <h2 class="text-xl">${img.name}</h2>
-                        <h2>${img.category}</h2>
+    detailsDisplay.innerHTML =   `<h2 class="text-2xl font-bold">${img.name}</h2>
+                        <img src="${img.image}" alt="">
+                        <p class="text-xl font-bold">Description</p>
                         <p>${img.description}</p>
                         <div class="flex justify-between items-center">
-                            <button class="btn bg-[#dcfce7] text-[#15803D]">${img.category}</button>
-                            <p>$${img.price}</p>
+                            <button class="btn text-xl bg-[#dcfce7] text-[#15803D]">${img.category}</button>
+                            <p class="text-xl font-bold text-green-600">$${img.price}</p>
                         </div>`
 
     my_modal_1.showModal()
