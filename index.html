@@ -55,7 +55,7 @@
                 <aside class="left col-span-2">
                     <h2 class="text-xl font-semibold">Categories</h2>
                     <ul id="category-list" class="mt-10 text-left">
-                        <button onclick="loadAll()" class="btn btn-wide justify-start bg-[#15803D]"><li class=" p-2 text-white text-[16px]">All Trees</li></button> 
+                        <button id="all-category" onclick='removeActive();this.classList.add("highlight");loadAll()' class="btn btn-wide btn-ghost justify-start highlight"><li class="p-2 text-[16px]">All Trees</li></button> 
                     </ul>
                     
                 </aside>

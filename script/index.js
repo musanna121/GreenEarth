@@ -3,6 +3,7 @@ const category = () =>{
     fetch(url)
     .then((res)=>res.json())
     .then(json=>showCategories(json.categories))
+    
 }
 
 const showCategories = (category) => {
@@ -11,9 +12,10 @@ const showCategories = (category) => {
     category.forEach((category) => {
     const btnDiv = document.createElement("div");
     // btnDiv.innerHTML = `<button id="click-category-${category.id}" class="btn"><li onclick='showPlant(${category.id})' class="p-2 hover:bg-white">${category.category_name}</li></button>`;
-    btnDiv.innerHTML = `<li class="p-2 col-span-2"><button onclick='showPlant(${category.id})' class="btn btn-ghost btn-wide justify-start text-[16px]">${category.category_name}</button></li>`;
+    btnDiv.innerHTML = `<li class="p-2 col-span-2"><button onclick='removeActive();showPlant(${category.id});this.classList.add("highlight")' class="btn btn-ghost btn-wide justify-start text-[16px] category-btn">${category.category_name}</button></li>`;
     displayCategory.append(btnDiv)
     });
+
 }
 
 
@@ -33,6 +35,7 @@ const allPlants = () =>{
     fetch(url)
     .then((res)=>res.json())
     .then((data) => displayCard(data.plants))
+    
 }
 
 const displayCard = (id) =>{
@@ -54,11 +57,13 @@ const displayCard = (id) =>{
     })
 } 
 
-// const removeActive = () => {
-//     const lessonButtons = document.querySelectorAll(".lesson-btn")
-//     // console.log(lessonButtons)
-//     lessonButtons.forEach((btn)=> btn.classList.remove("active"))
-// }
+const removeActive = () => {
+    const lessonButtons = document.querySelectorAll(".category-btn")
+    // console.log(lessonButtons)
+    const allCategory = document.getElementById("all-category")
+    allCategory.classList.remove("highlight")
+    lessonButtons.forEach((btn)=> btn.classList.remove("highlight"))
+}
 
 const displayDetails = (id) =>{
     const url = `https://openapi.programming-hero.com/api/plant/${id}`
